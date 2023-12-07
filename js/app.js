@@ -192,11 +192,14 @@ activeLink();
 /* --------------- Change Page Theme --------------- */
 let firstTheme = localStorage.getItem("dark");
 
+if (firstTheme === null) {
+  firstTheme = 1; 
+}
+
 changeTheme(+firstTheme);
 
 function changeTheme(isDark) {
   if (isDark) {
-    console.log(isDark);
     document.body.classList.add("dark");
     togle_btn.classList.replace("uil-moon", "uil-sun");
     localStorage.setItem("dark", 1);
@@ -210,6 +213,7 @@ function changeTheme(isDark) {
 togle_btn.addEventListener("click", () => {
   changeTheme(!document.body.classList.contains("dark"));
 });
+
 
 /* --------------- Open & Close Navbar Menu --------------- */
 hamburger.addEventListener("click", () => {
