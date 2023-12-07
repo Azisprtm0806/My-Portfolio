@@ -192,7 +192,9 @@ activeLink();
 /* --------------- Change Page Theme --------------- */
 let firstTheme = localStorage.getItem("dark");
 
-if (firstTheme === null) {
+console.log(firstTheme);
+
+if (firstTheme == null || firstTheme == 0) {
   firstTheme = 1; 
 }
 
